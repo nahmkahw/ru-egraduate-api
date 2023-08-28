@@ -1,1 +1,2 @@
-test github repo...
+# ru-egraduate-api
+API EGRADUATE
