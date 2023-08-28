@@ -1,0 +1,39 @@
+{"level":"error","method":"POST","msg":"An error occurred sql: no rows in result set","path":"/google/authorization-test","service":"google","status":422,"time":"2023-08-03T09:25:56Z"}
+{"level":"error","method":"POST","msg":"An error occurred sql: no rows in result set","path":"/google/authorization-test","service":"google","status":422,"time":"2023-08-03T09:25:57Z"}
+{"level":"error","method":"POST","msg":"An error occurred sql: no rows in result set","path":"/google/authorization-test","service":"google","status":422,"time":"2023-08-03T09:25:58Z"}
+{"level":"error","method":"POST","msg":"An error occurred sql: no rows in result set","path":"/google/authorization-test","service":"google","status":422,"time":"2023-08-03T09:25:59Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization-test","service":"google","status":200,"time":"2023-08-03T09:26:02Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization-test","service":"google","status":200,"time":"2023-08-03T09:26:03Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization-test","service":"google","status":200,"time":"2023-08-03T09:26:04Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:07Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:08Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:08Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:09Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:10Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:11Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:11Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:12Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:13Z"}
+{"level":"error","method":"GET","msg":"An error occurred dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","service":"student","status":404,"time":"2023-08-03T09:26:14Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6299999991","service":"student","status":200,"time":"2023-08-03T09:26:29Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6299999991","service":"student","status":200,"time":"2023-08-03T09:26:47Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6299999991","service":"student","status":200,"time":"2023-08-03T09:26:48Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6299999991","service":"student","status":200,"time":"2023-08-03T09:26:48Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6299999991","service":"student","status":200,"time":"2023-08-03T09:26:49Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T01:33:10Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T01:53:27Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6603026128","service":"student","status":200,"time":"2023-08-04T01:53:27Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T02:53:44Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T02:53:52Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T03:59:25Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T04:12:50Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T04:15:00Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T04:15:11Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T04:15:15Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T04:19:16Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T05:45:57Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T05:48:18Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6604018132","service":"student","status":200,"time":"2023-08-04T05:48:19Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T07:46:24Z"}
+{"level":"info","method":"POST","msg":"Request completed.","path":"/google/authorization","service":"google","status":200,"time":"2023-08-04T10:47:43Z"}
+{"level":"info","method":"GET","msg":"Request completed.","path":"/student/profile/6299999992","service":"student","status":200,"time":"2023-08-04T10:47:43Z"}

@@ -1,35 +1,23 @@
 version: '3.5'
 services:
-
-  ru-connext-caching:   
+  ru-egraduate-caching:   
     image: redis:6.0
-    container_name:  ru-connext-caching
+    container_name:  ru-egraduate-caching
     restart: always    
     ports:
-      - 6379:6379
+      - 6000:6379
     volumes:
       - ./redis_data:/data
       - ./redis_config/redis.conf:/redis.conf
-    command: redis-server /redis.conf --requirepass  admin-ru-connext-caching --appendonly yes
+    command: redis-server /redis.conf --requirepass  admin-ru-egraduate-caching --appendonly yes
 
-  ru-connext-api:
-    image:  ru-connext-api
-    container_name:  ru-connext-api
-    restart: always
-    depends_on:
-      -  ru-connext-caching
-    ports:
-      - 8883:8883
-
-  ru-smart-api:   
+  ru-egraduate-api:   
     # build: ./
     image: ru-smart-api
-    container_name: ru-smart-api
-    restart: always  
-    depends_on:
-       - ru-connext-caching  
+    container_name: ru-egraduate-api
+    restart: always
     ports:
-       - 9100:8883
+       - 9101:8883
     volumes:
        - ./:/app
     command: reflex -r "\.go$$" -s -- sh -c "go run ./"

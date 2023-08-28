@@ -1,0 +1,2 @@
+{"level":"error","method":"GET","msg":"dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","status":422,"time":"2023-08-03T04:49:05Z"}
+{"level":"error","method":"GET","msg":"dpiStmt_execute: ORA-00904: \"STD_CODENAME_THAI\": invalid identifier","path":"/student/profile/6299999991","status":422,"time":"2023-08-03T04:49:13Z"}

@@ -8,6 +8,7 @@ import (
 	"image"
 	"image/jpeg"
 	"net/http"
+	_ "net/url"
 	"strings"
 	"time"
 
@@ -28,12 +29,36 @@ func (h *studentHandlers) AuthenticationTest(c *gin.Context) {
 
 	err := c.ShouldBindJSON(&requestBody)
 	if err != nil {
+		c.Error(err)
 		c.IndentedJSON(http.StatusUnprocessableEntity, gin.H{"message": "Authorization fail becourse content type not json format."})
 		c.Abort()
 		return
 	}
 
 	tokenResponse, err := h.studentService.Authentication(requestBody.Std_code)
+	if err != nil {
+		c.Error(err)
+		c.IndentedJSON(http.StatusUnprocessableEntity, tokenResponse)
+		c.Abort()
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, tokenResponse)
+
+}
+
+func (h *studentHandlers) AuthenticationService(c *gin.Context) {
+
+	var requestBody students.AuthenServicePlayload
+
+	err := c.ShouldBindJSON(&requestBody)
+	if err != nil {
+		c.IndentedJSON(http.StatusUnprocessableEntity, gin.H{"message": "Authorization fail becourse content type not json format."})
+		c.Abort()
+		return
+	}
+
+	tokenResponse, err := h.studentService.AuthenticationService(requestBody.ServiveId)
 	if err != nil {
 		c.IndentedJSON(http.StatusUnprocessableEntity, tokenResponse)
 		c.Abort()
@@ -154,7 +179,8 @@ func (h *studentHandlers) GetStudentProfile(c *gin.Context) {
 	STD_CODE := c.Param("std_code")
 	studentProfileResponse, err := h.studentService.GetStudentProfile(STD_CODE)
 	if err != nil {
-		c.IndentedJSON(http.StatusUnprocessableEntity, err)
+		c.Error(err)
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "ไม่พบข้อมูลนักศึกษา."})
 		c.Abort()
 		return
 	}
@@ -183,9 +209,8 @@ func (h *studentHandlers) GetRegister(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, registerResponse)
 }
 
-
-
 func (h *studentHandlers) GetPhoto(c *gin.Context) {
+	service_token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdG9rZW5fa2V5IjoiZXNlcnZpY2U6OmFjY2Vzczo6MWUwYzI4ZWItMmRhOS00YTBkLTliZTQtODE3Y2ExNGRhZTRmIiwiZXhwaXJlc190b2tlbiI6MTY5MDQ0OTEyNSwiaXNzdWVyIjoiUnUtY29ubmV4dCIsInJlZnJlc2hfdG9rZW5fa2V5IjoiZXNlcnZpY2U6OnJlZnJlc2g6OjVjMGU1ZTMyLTJiM2UtNGYxNi04ODM0LTg4NGZkNjliMmI3MSIsInJvbGUiOiJTZXJ2aWNlIiwic3ViamVjdCI6IlJ1LUNvbm5leHRlc2VydmljZSJ9.YQWUYxF_qWfvPi3S-yObORZ_JaAMpcoEDngpMNlBF2Q"
 
 	ID_TOKEN, err := middlewares.GetHeaderAuthorization(c)
 	if err != nil {
@@ -194,18 +219,23 @@ func (h *studentHandlers) GetPhoto(c *gin.Context) {
 		return
 	}
 
-	 url := "http://10.2.1.155:9100/student/photo"
+	url := "http://10.2.1.155:9100/student/photo"
 
 	client := &http.Client{
 		Timeout: 60 * time.Second, // Set a higher timeout value
 	}
+
 	req, err := http.NewRequest("GET", url, nil)
+	q := req.URL.Query()
+	q.Add("id_token", ID_TOKEN)
+	req.URL.RawQuery = q.Encode()
+	fmt.Println(req.URL.String())
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Set request error"})
 		return
 	}
 
-	req.Header.Set("Authorization", "Bearer "+ID_TOKEN)
+	req.Header.Set("Authorization", "Bearer "+service_token)
 
 	response, err := client.Do(req)
 	if err != nil {
@@ -234,7 +264,7 @@ func (h *studentHandlers) GetPhoto(c *gin.Context) {
 	case "image/png":
 		img, err = jpeg.Decode(response.Body)
 		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "Get decode png error" + err.Error()})
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Get decode png error"})
 			return
 		}
 	default:
@@ -246,7 +276,7 @@ func (h *studentHandlers) GetPhoto(c *gin.Context) {
 	outputImg := bytes.NewBuffer(nil)
 
 	if err := jpeg.Encode(outputImg, img, nil); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Get resize error" + err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Get resize error"})
 		return
 	}
 
@@ -315,4 +345,3 @@ func (h *studentHandlers) GetPhotoById(c *gin.Context) {
 
 	c.Data(http.StatusOK, contentType, outputImg.Bytes())
 }
-

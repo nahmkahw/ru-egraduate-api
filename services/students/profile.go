@@ -11,8 +11,9 @@ func (s *studentServices) GetStudentProfile(studentCode string) (studentProfileR
 
 	STUDENT_CODE := studentCode
 
-	key :=  STUDENT_CODE+"::profile"
-	studentCache, err := s.redis_cache.Get(ctx,key).Result()
+	key := STUDENT_CODE + "::profile"
+
+	studentCache, err := s.redis_cache.Get(ctx, key).Result()
 	if err == nil {
 
 		_ = json.Unmarshal([]byte(studentCache), &student)
@@ -21,6 +22,7 @@ func (s *studentServices) GetStudentProfile(studentCode string) (studentProfileR
 
 	sp, err := s.studentRepo.GetStudentProfile(STUDENT_CODE)
 	if err != nil {
+
 		return studentProfileResponse, err
 	}
 

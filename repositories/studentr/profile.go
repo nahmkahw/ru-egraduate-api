@@ -1,5 +1,7 @@
 package studentr
+
 import "fmt"
+
 func (r *studentRepoDB) GetStudentProfile(studentCode string) (student *StudentProfileRepo, err error) {
 	if studentCode == "6299999992" {
 		studentCode = "6202408966"
