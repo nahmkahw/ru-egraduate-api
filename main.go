@@ -14,8 +14,6 @@ import (
 
 var oracle_db *sqlx.DB
 
-var mysql_db *sqlx.DB
-
 var redis_cache *redis.Client
 
 func init() {

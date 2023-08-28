@@ -10,23 +10,35 @@ type (
 	}
 
 	StudentProfileRepo struct {
+		ENROLL_YEAR          string `db:"ENROLL_YEAR"`
+		ENROLL_SEMESTER      string `db:"ENROLL_SEMESTER"`
 		STD_CODE             string `db:"STD_CODE"`
-		NAME_THAI            string `db:"NAME_THAI"`
-		NAME_ENG             string `db:"NAME_ENG"`
+		PRENAME_THAI_S       string `db:"PRENAME_THAI_S"`
+		PRENAME_ENG_S        string `db:"PRENAME_ENG_S"`
+		FIRST_NAME           string `db:"FIRST_NAME"`
+		LAST_NAME            string `db:"LAST_NAME"`
+		FIRST_NAME_ENG       string `db:"FIRST_NAME_ENG"`
+		LAST_NAME_ENG        string `db:"LAST_NAME_ENG"`
+		THAI_NAME            string `db:"THAI_NAME"`
+		PLAN_NO              string `db:"PLAN_NO"`
+		SEX                  string `db:"SEX"`
+		REGINAL_NAME         string `db:"REGINAL_NAME"`
+		SUBSIDY_NAME         string `db:"SUBSIDY_NAME"`
+		STATUS_NAME_THAI     string `db:"STATUS_NAME_THAI"`
 		BIRTH_DATE           string `db:"BIRTH_DATE"`
-		STD_STATUS_DESC_THAI string `db:"STD_STATUS_DESC_THAI"`
-		CITIZEN_ID           string `db:"CITIZEN_ID"`
-		REGIONAL_NAME_THAI   string `db:"REGIONAL_NAME_THAI"`
-		STD_TYPE_DESC_THAI   string `db:"STD_TYPE_DESC_THAI"`
-		FACULTY_NAME_THAI    string `db:"FACULTY_NAME_THAI"`
-		MAJOR_NAME_THAI      string `db:"MAJOR_NAME_THAI"`
-		WAIVED_NO            string `db:"WAIVED_NO"`
-		WAIVED_PAID          string `db:"WAIVED_PAID"`
-		WAIVED_TOTAL_CREDIT  int    `db:"WAIVED_TOTAL_CREDIT"`
+		STD_ADDR             string `db:"STD_ADDR"`
+		ADDR_TEL             string `db:"ADDR_TEL"`
+		JOB_POSITION         string `db:"JOB_POSITION"`
+		STD_OFFICE           string `db:"STD_OFFICE"`
+		OFFICE_TEL           string `db:"OFFICE_TEL"`
+		DEGREE_NAME          string `db:"DEGREE_NAME"`
+		BSC_DEGREE_NO        string `db:"BSC_DEGREE_NO"`
+		BSC_DEGREE_THAI_NAME string `db:"BSC_DEGREE_THAI_NAME"`
+		BSC_INSTITUTE_NO     string `db:"BSC_INSTITUTE_NO"`
+		INSTITUTE_THAI_NAME  string `db:"INSTITUTE_THAI_NAME"`
+		CK_CERT_NO           string `db:"CK_CERT_NO"`
 		CHK_CERT_NAME_THAI   string `db:"CHK_CERT_NAME_THAI"`
-		PENAL_NAME_THAI      string `db:"PENAL_NAME_THAI"`
-		MOBILE_TELEPHONE     string `db:"MOBILE_TELEPHONE"`
-		EMAIL_ADDRESS        string `db:"EMAIL_ADDRESS"`
+		ENG_NAME             string `db:"ENG_NAME"`
 	}
 
 	RegisterRepo struct {

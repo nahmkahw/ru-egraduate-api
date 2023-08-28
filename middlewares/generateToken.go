@@ -26,8 +26,8 @@ func GenerateToken(stdCode string, redis_cache *redis.Client) (*TokenResponse, e
 	// ---------------------  Create Access Token  ----------------------------------------- //
 	accessTokenClaims := jwt.MapClaims{}
 	accessTokenClaims["issuer"] = viper.GetString("token.issuer")
-	accessTokenClaims["subject"] = "Ru-Connext" + stdCode
-	accessTokenClaims["role"] = ""
+	accessTokenClaims["subject"] = "Ru-Egraduate::" + stdCode
+	accessTokenClaims["role"] = "master"
 	accessTokenClaims["expires_token"] = expirationAccessToken
 	accessTokenClaims["access_token_key"] = generateToken.AccessTokenKey
 	accessTokenClaims["refresh_token_key"] = generateToken.RefreshTokenKey
@@ -43,8 +43,8 @@ func GenerateToken(stdCode string, redis_cache *redis.Client) (*TokenResponse, e
 	// ---------------------  Create Refresh Token  ----------------------------------------- //
 	refreshTokenClaims := jwt.MapClaims{}
 	refreshTokenClaims["issuer"] = viper.GetString("token.issuer")
-	refreshTokenClaims["subject"] = "Ru-Connext::" + stdCode
-	refreshTokenClaims["role"] = ""
+	refreshTokenClaims["subject"] = "Ru-Egraduate::" + stdCode
+	refreshTokenClaims["role"] = "master"
 	refreshTokenClaims["expires_token"] = expirationRefreshToken
 	refreshTokenClaims["access_token_key"] = generateToken.AccessTokenKey
 	refreshTokenClaims["refresh_token_key"] = generateToken.RefreshTokenKey

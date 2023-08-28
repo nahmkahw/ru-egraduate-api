@@ -72,23 +72,35 @@ type (
 	}
 
 	StudentProfileService struct {
+		ENROLL_YEAR          string `json:"ENROLL_YEAR"`
+		ENROLL_SEMESTER      string `json:"ENROLL_SEMESTER"`
 		STD_CODE             string `json:"STD_CODE"`
-		NAME_THAI            string `json:"NAME_THAI"`
-		NAME_ENG             string `json:"NAME_ENG"`
+		PRENAME_THAI_S       string `json:"PRENAME_THAI_S"`
+		PRENAME_ENG_S        string `json:"PRENAME_ENG_S"`
+		FIRST_NAME           string `json:"FIRST_NAME"`
+		LAST_NAME            string `json:"LAST_NAME"`
+		FIRST_NAME_ENG       string `json:"FIRST_NAME_ENG"`
+		LAST_NAME_ENG        string `json:"LAST_NAME_ENG"`
+		THAI_NAME            string `json:"THAI_NAME"`
+		PLAN_NO              string `json:"PLAN_NO"`
+		SEX                  string `json:"SEX"`
+		REGINAL_NAME         string `json:"REGINAL_NAME"`
+		SUBSIDY_NAME         string `json:"SUBSIDY_NAME"`
+		STATUS_NAME_THAI     string `json:"STATUS_NAME_THAI"`
 		BIRTH_DATE           string `json:"BIRTH_DATE"`
-		STD_STATUS_DESC_THAI string `json:"STD_STATUS_DESC_THAI"`
-		CITIZEN_ID           string `json:"CITIZEN_ID"`
-		REGIONAL_NAME_THAI   string `json:"REGIONAL_NAME_THAI"`
-		STD_TYPE_DESC_THAI   string `json:"STD_TYPE_DESC_THAI"`
-		FACULTY_NAME_THAI    string `json:"FACULTY_NAME_THAI"`
-		MAJOR_NAME_THAI      string `json:"MAJOR_NAME_THAI"`
-		WAIVED_NO            string `json:"WAIVED_NO"`
-		WAIVED_PAID          string `json:"WAIVED_PAID"`
-		WAIVED_TOTAL_CREDIT  int    `json:"WAIVED_TOTAL_CREDIT"`
+		STD_ADDR             string `json:"STD_ADDR"`
+		ADDR_TEL             string `json:"ADDR_TEL"`
+		JOB_POSITION         string `json:"JOB_POSITION"`
+		STD_OFFICE           string `json:"STD_OFFICE"`
+		OFFICE_TEL           string `json:"OFFICE_TEL"`
+		DEGREE_NAME          string `json:"DEGREE_NAME"`
+		BSC_DEGREE_NO        string `json:"BSC_DEGREE_NO"`
+		BSC_DEGREE_THAI_NAME string `json:"BSC_DEGREE_THAI_NAME"`
+		BSC_INSTITUTE_NO     string `json:"BSC_INSTITUTE_NO"`
+		INSTITUTE_THAI_NAME  string `json:"INSTITUTE_THAI_NAME"`
+		CK_CERT_NO           string `json:"CK_CERT_NO"`
 		CHK_CERT_NAME_THAI   string `json:"CHK_CERT_NAME_THAI"`
-		PENAL_NAME_THAI      string `json:"PENAL_NAME_THAI"`
-		MOBILE_TELEPHONE     string `json:"MOBILE_TELEPHONE"`
-		EMAIL_ADDRESS        string `json:"EMAIL_ADDRESS"`
+		ENG_NAME             string `json:"ENG_NAME"`
 	}
 
 	RegisterResponse struct {

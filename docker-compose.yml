@@ -13,17 +13,12 @@ services:
 
   ru-egraduate-api:   
     # build: ./
-    image: ru-smart-api
+    image: ru-egraduate-api
     container_name: ru-egraduate-api
     restart: always
     ports:
-       - 9101:8883
+       - 6001:8883
     volumes:
        - ./:/app
-    command: reflex -r "\.go$$" -s -- sh -c "go run ./"
-    # command: go run main.go
- 
-networks:
-  default:
-    external: 
-      name: backend-services
+    #command: reflex -r "\.go$$" -s -- sh -c "go run ./"
+    #command: go run main.go
